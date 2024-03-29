@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 
-df =pd.read_csv("./Sources/german_cars_cleaned.csv")
+df =pd.read_csv("./Sources/german_cars_cleaned.csv" , encoding = 'unicode_escape')
 
 def tob_10_carss (col):
     df_top25_hp=df.groupby('hp')['price'].count().sort_values(ascending = False).reset_index().head(25)
